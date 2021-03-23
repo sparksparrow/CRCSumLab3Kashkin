@@ -1,0 +1,13 @@
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.exe
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.deps.json
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.runtimeconfig.json
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.runtimeconfig.dev.json
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.dll
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.pdb
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\obj\Debug\netcoreapp3.1\CRCSumLab3Kashkin.csprojAssemblyReference.cache
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\obj\Debug\netcoreapp3.1\CRCSumLab3Kashkin.AssemblyInfoInputs.cache
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\obj\Debug\netcoreapp3.1\CRCSumLab3Kashkin.AssemblyInfo.cs
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\obj\Debug\netcoreapp3.1\CRCSumLab3Kashkin.csproj.CoreCompileInputs.cache
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\obj\Debug\netcoreapp3.1\CRCSumLab3Kashkin.dll
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\obj\Debug\netcoreapp3.1\CRCSumLab3Kashkin.pdb
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCSumLab3Kashkin\obj\Debug\netcoreapp3.1\CRCSumLab3Kashkin.genruntimeconfig.cache

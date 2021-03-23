@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRCSumLab3Kashkin", "CRCSumLab3Kashkin\CRCSumLab3Kashkin.csproj", "{82394D80-5C84-4817-84C7-C38AB6AD27B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRCUnitTests", "CRCUnitTests\CRCUnitTests.csproj", "{A1939C5B-A464-4C37-883C-A49104F68F7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82394D80-5C84-4817-84C7-C38AB6AD27B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82394D80-5C84-4817-84C7-C38AB6AD27B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82394D80-5C84-4817-84C7-C38AB6AD27B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82394D80-5C84-4817-84C7-C38AB6AD27B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1939C5B-A464-4C37-883C-A49104F68F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1939C5B-A464-4C37-883C-A49104F68F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1939C5B-A464-4C37-883C-A49104F68F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1939C5B-A464-4C37-883C-A49104F68F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {353FD52F-72DA-4F53-99DA-3EC0707F0304}
+	EndGlobalSection
+EndGlobal
