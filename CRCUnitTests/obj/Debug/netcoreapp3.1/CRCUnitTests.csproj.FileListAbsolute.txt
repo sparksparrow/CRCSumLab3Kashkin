@@ -97,3 +97,6 @@ C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCUnitTests\obj\Debug\ne
 C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCUnitTests\obj\Debug\netcoreapp3.1\CRCUnitTests.dll
 C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCUnitTests\obj\Debug\netcoreapp3.1\CRCUnitTests.pdb
 C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCUnitTests\obj\Debug\netcoreapp3.1\CRCUnitTests.genruntimeconfig.cache
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCUnitTests\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.deps.json
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCUnitTests\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.runtimeconfig.json
+C:\Users\Алексей\source\repos\CRCSumLab3Kashkin\CRCUnitTests\bin\Debug\netcoreapp3.1\CRCSumLab3Kashkin.runtimeconfig.dev.json

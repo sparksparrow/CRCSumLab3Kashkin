@@ -1,6 +1,7 @@
 using CRCSumLab3Kashkin;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CRCUnitTests
 {
@@ -13,7 +14,7 @@ namespace CRCUnitTests
         }
 
         [Test]
-        public void GetCRCVariant8_FromExample_Success()
+        public void GetCRC_FromExample_Success()
         {
             IList<bool> message = new List<bool>() { 
                 true, 
@@ -29,17 +30,30 @@ namespace CRCUnitTests
             };//сообщение 1101011011
             int[] polynome = new int[] {0, 1, 4};
             IEnumerable<bool> expectedCRC = new bool[] {
-                false,
                 true,
                 true,
                 true,
                 false
-            };//CRC 01110
+            };//CRC 1110
 
-            CRCProcessor crcProcessor = new CRCProcessor(polynome);            
-            var CRC = crcProcessor.GetCRC(message);
+            Message generatedMessage = new Message(polynome, message);
+            CRCProcessor crcProcessor = new CRCProcessor(generatedMessage);            
+            var CRC = crcProcessor.GetCRC();
 
             Assert.AreEqual(expectedCRC, CRC);
+        }
+
+        [Test]
+        public void GetCRC_RandomSequence_Success()
+        {
+            Message generatedMessage = new Message();
+            CRCProcessor crcProcessor = new CRCProcessor(generatedMessage);
+            var CRC = crcProcessor.GetCRC();
+
+            IList<bool> CheckedCRC = crcProcessor.CheckCRC(CRC);
+            var expectedCRC = new bool[CheckedCRC.Count()];
+
+            Assert.AreEqual(expectedCRC, CheckedCRC);
         }
     }
 }

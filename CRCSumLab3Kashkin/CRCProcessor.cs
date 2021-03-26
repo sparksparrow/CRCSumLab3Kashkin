@@ -6,62 +6,85 @@ using System.Text;
 namespace CRCSumLab3Kashkin
 {
     public class CRCProcessor
-    {
-        private readonly int[] polynomeBytes = new int[] { 0, 1, 3, 4, 5, 6, 7, 10, 11, 14, 17, 18, 23, 24 };
-        private readonly bool[] balance;
-
-        public CRCProcessor()
+    {             
+        public Message Message { get; private set; }
+        //Инициализировать сообщение (Обязательно непустое!)
+        public CRCProcessor(Message message)
         {
-            balance = new bool[polynomeBytes.Last()];
+            SetMessage(message);
         }
-
-        public CRCProcessor(int[] polynomeBytes)
+        //Установить сообщение (Обязательно непустое!)
+        public void SetMessage (Message message)
         {
-            this.polynomeBytes = polynomeBytes;
-            balance = new bool[polynomeBytes.Last()];
-        }
-        //Получаем случаный список двоичных зачений
-        public IList<bool> GetRandomList(int k = 1000)
-        {
-            IList<bool> resultList = new List<bool>(1000);
-            Random rand = new Random();
-            for (int i = 0; i < k; i++)
+            if (message == null || !message.Any())
             {
-                resultList.Add(rand.Next(2) == 1 ? true : false);
+                throw new Exception("No message data");
             }
-            return resultList;
-        }
-        //Строим генераторный полином по образующему полиному
-        public bool[] BuildPolynome()
-        {
-            var polynome = new bool[polynomeBytes.Last() + 1];
-            for (int i = 0; i < polynomeBytes.Length; i++)
+            else
             {
-                polynome[polynomeBytes[i]] = true;
+                Message = message;
             }
-            return polynome.Reverse().ToArray();
         }
         //Вычисляем CRC-сумму
-        public IEnumerable<bool> GetCRC(IList<bool> message)
+        public IList<bool> GetCRC(IList<bool> message = default)
         {
-            bool[] polynome = BuildPolynome();
-            var balancedMessage = new List<bool>(message.Count + balance.Length);
-            balancedMessage.AddRange(message);
-            balancedMessage.AddRange(balance);
-
-            for (int i = 0; i < message.Count; i++)
+            //Полином
+            bool[] polynome = Message.Polynome.Skip(1).ToArray();
+            //Сбалансированное сообщение
+            IList<bool> balancedMessage;
+            if (message == default)
             {
-                if (balancedMessage[i])
+                balancedMessage = Message.BalanceMessage;
+            }
+            else
+            {
+                balancedMessage = message;
+            }
+            //Степень полинома
+            int polynomDegree = Message.GetPolynomialDegree();
+            //Имитируем регистр, заполняем его первыми W количеством элементов сообщения
+            Queue<bool> register = new Queue<bool>(balancedMessage.Take(polynomDegree));
+
+            for (int i = polynomDegree; i < balancedMessage.Count; i++)
+            {
+                if (register.Dequeue())
                 {
-                    for (int k = 0; k < polynome.Length; k++)
+                    register.Enqueue(balancedMessage[i]);
+                    IList<bool> tempRegister = new List<bool>(register);
+                    for (int k = 0; k < register.Count; k++)
                     {
-                        balancedMessage[i + k] ^= polynome[k];
+                        tempRegister[k] ^= polynome[k];
                     }
+                    register = new Queue<bool>(tempRegister);
+                }
+                else
+                {
+                    register.Enqueue(balancedMessage[i]);
                 }
             }
 
-            IEnumerable<bool> CRC = balancedMessage.TakeLast(polynome.Length);
-            return CRC;
+            return register.ToList();
+        }
+
+        //Вычисляем CRC-сумму без балансировки сообщения (проверка)
+        public IList<bool> CheckCRC(IList<bool> crc)
+        {
+            List<bool> messageData = Message;
+            messageData.AddRange(crc);
+            return GetCRC(messageData);
+            //Console.WriteLine();
+            //Console.WriteLine(Message.Count);
+            //Console.WriteLine(countPolynome);
+            //Console.WriteLine(Message.Count - countPolynome);
+            //Console.WriteLine();
+            //foreach (var el in Message)
+            //    Console.Write(Convert.ToByte(el));
+            //Console.WriteLine();
+            //foreach (var el in crc)
+            //    Console.Write(Convert.ToByte(el));
+            //Console.WriteLine();
+
+            //IList<bool> CRC = Message.TakeLast(countCRC);
         }
     }
 }
