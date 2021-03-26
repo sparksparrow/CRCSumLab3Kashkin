@@ -38,7 +38,7 @@ namespace CRCUnitTests
 
             Message generatedMessage = new Message(polynome, message);
             CRCProcessor crcProcessor = new CRCProcessor(generatedMessage);            
-            var CRC = crcProcessor.GetCRC();
+            IList<bool> CRC = crcProcessor.GetCRC();
 
             Assert.AreEqual(expectedCRC, CRC);
         }
@@ -48,7 +48,7 @@ namespace CRCUnitTests
         {
             Message generatedMessage = new Message();
             CRCProcessor crcProcessor = new CRCProcessor(generatedMessage);
-            var CRC = crcProcessor.GetCRC();
+            IList<bool> CRC = crcProcessor.GetCRC();
 
             IList<bool> CheckedCRC = crcProcessor.CheckCRC(CRC);
             var expectedCRC = new bool[CheckedCRC.Count()];

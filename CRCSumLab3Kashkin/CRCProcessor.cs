@@ -72,19 +72,6 @@ namespace CRCSumLab3Kashkin
             List<bool> messageData = Message;
             messageData.AddRange(crc);
             return GetCRC(messageData);
-            //Console.WriteLine();
-            //Console.WriteLine(Message.Count);
-            //Console.WriteLine(countPolynome);
-            //Console.WriteLine(Message.Count - countPolynome);
-            //Console.WriteLine();
-            //foreach (var el in Message)
-            //    Console.Write(Convert.ToByte(el));
-            //Console.WriteLine();
-            //foreach (var el in crc)
-            //    Console.Write(Convert.ToByte(el));
-            //Console.WriteLine();
-
-            //IList<bool> CRC = Message.TakeLast(countCRC);
         }
     }
 }

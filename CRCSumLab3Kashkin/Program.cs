@@ -16,11 +16,11 @@ namespace CRCSumLab3Kashkin
             Console.WriteLine("Исходное сообщение:");
             message.ForEach(x => Console.Write(Convert.ToInt32(x))) ;
             //Получаем и выводим CRC-сумму
-            List<bool> CRC = crcProcessor.GetCRC() as List<bool>;
+            var CRC = crcProcessor.GetCRC() as List<bool>;
             Console.WriteLine("\nCRC-сумма:");
             CRC.ForEach(x => Console.Write(Convert.ToInt32(x)));
             //Получаем и выводим регистр после проверки CRC
-            List<bool> CheckCRC = crcProcessor.CheckCRC(CRC.ToList()) as List<bool>;
+            var CheckCRC = crcProcessor.CheckCRC(CRC.ToList()) as List<bool>;
             Console.WriteLine("\nПроверка сообщения:");
             CheckCRC.ForEach(x => Console.Write(Convert.ToInt32(x)));
 
