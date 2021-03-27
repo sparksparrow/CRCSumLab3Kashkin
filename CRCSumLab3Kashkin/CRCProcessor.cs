@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CRCSumLab3Kashkin
 {
@@ -31,18 +30,10 @@ namespace CRCSumLab3Kashkin
             //Полином
             bool[] polynome = Message.Polynome.Skip(1).ToArray();
             //Сбалансированное сообщение
-            IList<bool> balancedMessage;
-            if (message == default)
-            {
-                balancedMessage = Message.BalanceMessage;
-            }
-            else
-            {
-                balancedMessage = message;
-            }
+            IList<bool> balancedMessage = message == default ? Message.BalanceMessage : message;
             //Степень полинома
             int polynomDegree = Message.GetPolynomialDegree();
-            //Имитируем регистр, заполняем его первыми W количеством элементов сообщения
+            //Имитируем регистр, заполняем его первыми W элементами сообщения
             Queue<bool> register = new Queue<bool>(balancedMessage.Take(polynomDegree));
 
             for (int i = polynomDegree; i < balancedMessage.Count; i++)

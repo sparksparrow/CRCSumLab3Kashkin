@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CRCSumLab3Kashkin
 {
@@ -24,7 +23,7 @@ namespace CRCSumLab3Kashkin
                 return polynome.Reverse().ToArray();
             }
         }
-        //Добавляем к сообщению W количесво бит (нолей) и возвращаем (Свойство)
+        //Добавляем к сообщению W бит (нулей) и возвращаем (Свойство)
         public IList<bool> BalanceMessage
         {
             get
@@ -50,7 +49,7 @@ namespace CRCSumLab3Kashkin
         public Message(IList<bool> messageData)
         {
             balance = new bool[GetPolynomialDegree()];
-            this.AddRange(messageData);
+            AddRange(messageData);
         }
         //Задать полином и сгенерировать случайное сообщение
         public Message(int[] polynomeBytes)
@@ -64,7 +63,7 @@ namespace CRCSumLab3Kashkin
         {
             this.polynomeBytes = polynomeBytes;
             balance = new bool[GetPolynomialDegree()];
-            this.AddRange(messageData);
+            AddRange(messageData);
         }
         //Получаем случаный список двоичных зачений
         public void SetRandomMessage(int k = 1000)
@@ -75,8 +74,8 @@ namespace CRCSumLab3Kashkin
             {
                 RandomList.Add(rand.Next(2) == 1 ? true : false);
             }
-            this.Clear();
-            this.AddRange(RandomList);
+            Clear();
+            AddRange(RandomList);
         }       
     }
 }
